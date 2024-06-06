@@ -19,14 +19,12 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 migrate = Migrate(app, db)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
-
-
-
 
 @app.route('/')
+
+def create_tables():
+    db.create_all()
+    
 def home():
     return render_template('/home.html')
 
