@@ -4,9 +4,6 @@ from config import TestingConfig
 from .Models import db 
 from flask_migrate import Migrate
 import os
-# 
-# from flask_sqlalchemy import SQLAlchemy
-# 
 
 app= Flask(__name__)
 
