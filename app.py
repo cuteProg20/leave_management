@@ -1,9 +1,9 @@
-from flask import Flask
-from flask import render_template
-from config import TestingConfig
-from .Models import db 
+from flask import Flask, render_template
 from flask_migrate import Migrate
+from config import TestingConfig
+# from app import app
 import os
+from .Models.users import db
 
 app= Flask(__name__)
 
@@ -18,10 +18,10 @@ migrate = Migrate(app, db)
 
 
 @app.route('/')
-
 def create_tables():
     db.create_all()
-    
+
+@app.route('/home')   
 def home():
     return render_template('/home.html')
 
