@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 from flask_restful import Api, Resource
 from werkzeug.security import generate_password_hash
 from ..models import User
-from extensions import db
+from ...extensions import db
 
 user_bp = Blueprint('user', __name__)
 api = Api(user_bp)

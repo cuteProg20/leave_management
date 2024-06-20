@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flask_restful import Api, Resource
 from ..models import Country
-from extensions import db
+from ...extensions import db
 
 country_bp = Blueprint('country', __name__)
 api = Api(country_bp)

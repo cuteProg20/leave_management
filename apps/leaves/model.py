@@ -2,7 +2,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-from extensions import db
+from ...extensions import db
 
 class LeaveType(db.Model):
     __tablename__ = 'leave_types'
