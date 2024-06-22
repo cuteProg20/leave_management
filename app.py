@@ -1,13 +1,15 @@
 from flask import Flask, render_template
 from flask_migrate import Migrate
-from config import Config
+from apps import db, create_app
 import os
-from apps.users import db
+
+app = create_app()
+migrate = Migrate(app, db)
 
 app= Flask(__name__)
 
 
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI', Config)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
@@ -20,9 +22,9 @@ migrate = Migrate(app, db)
 def create_tables():
     db.create_all()
 
-# @app.route('/home')   
-# def home():
-#     return render_template('/home.html')
+@app.route('/home')   
+def home():
+    return render_template('apps/Templates/home.html')
 
 
 if __name__ == '__main__':
