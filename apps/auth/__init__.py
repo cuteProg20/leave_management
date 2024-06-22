@@ -1,8 +1,8 @@
 from flask import Blueprint
 from flask_restful import Api
 
-from model import User
-from route import RegisterAPI, LoginAPI, LogoutAPI, ProtectedAPI, TokenVerifyAPI
+from ..models import User
+from .route import RegisterAPI, LoginAPI, LogoutAPI, ProtectedAPI, TokenVerifyAPI
 
 # Create a Blueprint for authentication
 auth_bp = Blueprint('auth', __name__)

@@ -21,7 +21,7 @@ def create_app():
 
     # Register blueprints
     from .auth import auth_bp
-    from .leaves import leave_bp
+    from leaves import leave_bp
     from .leave_requests import leave_request_bd
     from .employee import employee_bp
     from .departments import department_bp

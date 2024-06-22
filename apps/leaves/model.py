@@ -2,7 +2,13 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.orm import relationship
-from ...extensions import db
+from extensions import db
+
+class Leaves(db.Model):
+    __tablename__ = 'leaves'
+
+    id = Column(Integer, primary_key=True)
+
 
 class LeaveType(db.Model):
     __tablename__ = 'leave_types'

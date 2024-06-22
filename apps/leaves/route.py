@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from flask_restful import Api, Resource
-from .model import LeaveRequest
+from models import LeaveRequest
 from ...extensions import db
 
 leave_bp = Blueprint('leave', __name__)
