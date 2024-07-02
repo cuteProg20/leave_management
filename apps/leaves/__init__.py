@@ -1,6 +1,6 @@
 from flask import Blueprint
 from flask_restful import Api
-from route import LeaveListAPI, LeaveAPI
+from .route import LeaveListAPI, LeaveAPI
 
 
 # Create a Blueprint for department management

@@ -11,16 +11,13 @@ app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 
-app = create_app()
-migrate = Migrate(app, db)
+@app.route('/')
+def create_tables():
+    db.create_all()
 
-# @app.route('/')
-# def create_tables():
-#     db.create_all()
-
-@app.route('/home')   
-def home():
-    return render_template('apps/Templates/home.html')
+# @app.route('/home')   
+# def home():
+#     return render_template('apps/Templates/home.html')
 
 
 if __name__ == '__main__':
